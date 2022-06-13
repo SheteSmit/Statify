@@ -11,13 +11,13 @@ TOKEN_INFO = "token_info"
 clientId = ""
 clientSecret = ""
 
-with open('app_secret') as f:
+with open('app_secret.txt') as f:
     app.secret_key = f.read()
 
-with open('client_secret') as f:
+with open('client_secret.txt') as f:
     clientSecret = f.read()
 
-with open('client_id') as f:
+with open('client_id.txt') as f:
     clientId = f.read()
 
 @app.route('/')
