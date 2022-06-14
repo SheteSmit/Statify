@@ -5,3 +5,5 @@ A program that assesses the mood of each one of your Spotify playlists and gives
 - Python
 - Flask
 - React JS
+- HTML
+- CSS
