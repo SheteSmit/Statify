@@ -32,21 +32,8 @@ function App() {
         {/* new line start*/}
         <p>To get your profile details: </p><button onClick={getData}>Click me</button>
         {profileData && <div>
-            <h1>All Playlists: </h1>
-              <img src={profileData.images[0]} alt=""/>
-              <p>{profileData.playlists[0]}</p>
-              <img src={profileData.images[1]} alt=""/>
-              <p>{profileData.playlists[1]}</p>
-              <img src={profileData.images[2]} alt=""/>
-              <p>{profileData.playlists[2]}</p>
-              <img src={profileData.images[3]} alt=""/>
-              <p>{profileData.playlists[3]}</p>
-              <img src={profileData.images[4]} alt=""/>
-              <p>{profileData.playlists[4]}</p>
-              <img src={profileData.images[5]} alt=""/>
-              <p>{profileData.playlists[5]}</p>
-            <h2>Average Score</h2>
-              <p>{profileData.avg_score}</p>
+          {console.log(profileData)}
+            <PlaylistList playLists={profileData} />
             </div>
         }
          {/* end of new line */}
