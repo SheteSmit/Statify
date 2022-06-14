@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from "axios";
 import PlaylistList from './components/PlaylistList';
+import "./App.css"
 
 function App() {
 
@@ -30,10 +31,12 @@ function App() {
   return (
     <div className="App">
         {/* new line start*/}
-        <p>To get your profile details: </p><button onClick={getData}>Click me</button>
+        <p>To get your profile details: </p><button onClick={getData} className="button-62">Click me</button>
         {profileData && <div>
-          {console.log(profileData)}
+          <h1>All Playlists: </h1>
             <PlaylistList playLists={profileData} />
+          <h2>Average Score: </h2>
+            <p>{profileData.avg_score}</p>
             </div>
         }
          {/* end of new line */}

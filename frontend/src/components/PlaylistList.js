@@ -1,5 +1,6 @@
 import React from 'react'
 import Playlist from './Playlist'
+import classes from "./PlaylistList.module.css"
 
 export default function PlaylistList(props) {
   
@@ -13,7 +14,7 @@ export default function PlaylistList(props) {
     }
 
     return (
-        <ul>
+        <ul className={classes.list}>
             {items}
         </ul>
     )
