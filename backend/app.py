@@ -90,20 +90,6 @@ def getTracks():
 
     return response_body
 
-def get_currently_playing():
-    try:
-        global token_info
-        token_info = get_token()
-    except:
-        print("user not logged in")
-        return redirect("/")
-    
-    sp = spotipy.Spotify(auth=token_info['access_token'])
-
-    throw_away = sp.currently_playing()
-    res = "CURRENTLY PLAYING: "+ throw_away['item']['name'] + " - " + throw_away['item']['album']['artists'][0]['name']
-    return res
-
 def get_token():
     global token_info
     token_info = session.get(TOKEN_INFO, None)

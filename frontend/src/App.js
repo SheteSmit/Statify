@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from "axios";
 import PlaylistList from './components/PlaylistList';
-import "./App.css"
+import classes from "./App.module.css"
 
 function App() {
 
@@ -14,7 +14,8 @@ function App() {
       url:"/getTracks",
     })
     .then((response) => {
-      const res =response.data
+      const res = response.data
+      console.log(res)
       setProfileData(({
         playlists: res.playlists,
         avg_score: res.avg_score,
@@ -29,18 +30,21 @@ function App() {
     //end of new line 
 
   return (
-    <div className="App">
-        {/* new line start*/}
-        <p>To get your profile details: </p><button onClick={getData} className="button-62">Click me</button>
-        {profileData && <div>
-          <h1>All Playlists: </h1>
-            <PlaylistList playLists={profileData} />
-          <h2>Average Score: </h2>
-            <p>{profileData.avg_score}</p>
+    <>
+      <div className={classes.body}>
+          <h1 className={classes.text}>To get your profile details: </h1>
+      </div>
+      <div>
+          <button onClick={getData} className={classes.button}>See Your Results</button>
+          {profileData && <div>
+            <h1>All Playlists: </h1>
+              <PlaylistList playLists={profileData} />
+            <h2>Average Score: </h2>
+              <p>{profileData.avg_score}</p>
             </div>
-        }
-         {/* end of new line */}
-    </div>
+          }
+      </div>
+    </>
   );
 }
 
