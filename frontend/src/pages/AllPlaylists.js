@@ -13,7 +13,7 @@ export default function AllPlaylists() {
     
     axios({
     method: "GET",
-    url:"/getTracks",
+    url:"/redirect",
     })
     .then((response) => {
     const res = response.data
