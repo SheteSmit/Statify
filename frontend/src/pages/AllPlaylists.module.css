@@ -1,10 +1,13 @@
 html {background-color: #131313} 
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
 
 .head {
   color: whitesmoke;
   text-align: center;
   padding-top: 100px;
   background-color: #131313;
+  font-family: 'Fira Mono', monospace;
+  font-size: 56px;
 } 
 
 .head2 {
