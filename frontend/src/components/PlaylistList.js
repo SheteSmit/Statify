@@ -14,7 +14,7 @@ export default function PlaylistList(props) {
     }
 
     return (
-        <ul>
+        <ul className={classes.list}>
             {items}
         </ul>
     )

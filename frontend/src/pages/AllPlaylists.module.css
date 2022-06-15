@@ -1,0 +1,54 @@
+html {background-color: #131313} 
+
+.head {
+  color: whitesmoke;
+  text-align: center;
+  padding-top: 100px;
+  background-color: #131313;
+} 
+
+.head2 {
+    color: whitesmoke;
+    text-align: center;
+    background-color: #131313;
+}
+
+.button {
+    background: linear-gradient(to bottom right, #3dd149, #4bdd66);
+    background-color: #000000;
+    border: 0;
+    border-radius: 12px;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    margin: 0;
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  
+  .button:not([disabled]):focus {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(16, 126, 60, 0.5), .125rem .125rem 1rem rgba(16, 173, 61, 0.5);
+    text-align: center;
+  }
+  
+  .button:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(11, 36, 21, 0.5), .125rem .125rem 1rem rgba(104, 118, 108, 0.5);
+    text-align: center;
+  }
