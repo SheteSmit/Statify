@@ -22,9 +22,12 @@ with open('client_id.txt') as f:
 
 @app.route('/')
 def login():
+    print('create oauth')
     sp_oauth = create_spotify_oauth()
+    print('create auth url')
     auth_url = sp_oauth.get_authorize_url()
-    return redirect(auth_url)
+    print(auth_url)
+    return (redirect(auth_url))
 
 @app.route('/redirect')
 def redirectPage():
@@ -45,6 +48,7 @@ def getTracks():
         print("user not logged in")
         return redirect("/")
 
+    
     sp = spotipy.Spotify(auth=token_info['access_token'])
 
     all_playLists = []
@@ -58,6 +62,7 @@ def getTracks():
 
     while True:
         items = sp.current_user_playlists(limit=50, offset=iteration * 50)['items']
+        
         iteration += 1
 
         for idx, item in enumerate(items):
@@ -87,7 +92,7 @@ def getTracks():
          "avg_score": res[1],
          "images": res[2]
     }
-
+    
     return response_body
 
 def get_token():

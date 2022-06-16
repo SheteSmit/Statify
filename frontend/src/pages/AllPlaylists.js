@@ -17,7 +17,6 @@ export default function AllPlaylists() {
     })
     .then((response) => {
     const res = response.data
-    console.log(res)
     setProfileData(({
         playlists: res.playlists,
         avg_score: res.avg_score,
