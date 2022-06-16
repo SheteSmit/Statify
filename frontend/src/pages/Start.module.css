@@ -4,7 +4,7 @@
   display: flex;
   width: 100vw;
   height: 100vh;
-  align-items: center;
+  /*align-items:  center;*/
   justify-content: center;
   margin: 0;
   background: #131313;
@@ -12,10 +12,21 @@
   font-size: 96px;
   font-family: 'Fira Mono', monospace;
   letter-spacing: -7px;
+  padding-top: 15%;
 }
 
 .content {
   animation: glitch 1s linear infinite;
+}
+
+.text {
+  text-align: center;
+  font-family: 'source code pro', monospace;
+  font-size: 28px;
+  color: white;
+  position: absolute;
+  top: 45%;
+  right:33.5%;
 }
 
 @keyframes glitch{

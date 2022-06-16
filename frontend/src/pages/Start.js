@@ -11,13 +11,17 @@ export default function Start() {
     return (
     <>
         <body className={classes.body}>
-            <div className={classes.content} title="How Unique?">
-            How Unique?
+            <div className={classes.content} title="Statify">
+            Statify
+            </div>
+        </body>
+            <div>
+                <p className={classes.text}>Get your personal Spotify Playlist data</p>
             </div>
             <div>
                 <button onClick={buttonHandler} className={classes.button}>See Your Results</button>
             </div>
-        </body>
+        
     </>
     );
 }
