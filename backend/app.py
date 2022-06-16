@@ -1,3 +1,4 @@
+from psutil import users
 import spotipy
 from flask import Flask, request, url_for, session, redirect
 from spotipy import SpotifyOAuth
@@ -10,6 +11,7 @@ app.config['SESSION_COOKIE_NAME'] = 'Smits Cookie'
 TOKEN_INFO = "token_info"
 clientId = ""
 clientSecret = ""
+nameUser = ""
 
 with open('app_secret.txt') as f:
     app.secret_key = f.read()
@@ -31,6 +33,16 @@ def login():
 
 @app.route('/redirect')
 def redirectPage():
+    
+    sp_oauth = create_spotify_oauth()
+    session.clear()
+    code = request.args.get('code')
+    token_info = sp_oauth.get_access_token(code)
+    session[TOKEN_INFO] = token_info
+    spot = spotipy.Spotify(auth=token_info['access_token'])
+    id = spot.current_user()['id']
+    global nameUser
+    nameUser = id
     sp_oauth = create_spotify_oauth()
     session.clear()
     code = request.args.get('code')
@@ -50,6 +62,7 @@ def getTracks():
 
     
     sp = spotipy.Spotify(auth=token_info['access_token'])
+    print(sp.me()['id'])
 
     all_playLists = []
     iteration = 0
@@ -112,5 +125,6 @@ def create_spotify_oauth():
         client_id=clientId,
         client_secret=clientSecret,
         redirect_uri=url_for('redirectPage', _external=True),
-        scope="user-library-read" 
+        scope="user-library-read",
+        username="shetesmit"
     )
