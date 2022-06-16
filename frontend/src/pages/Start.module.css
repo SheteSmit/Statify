@@ -3,8 +3,7 @@
 .body{ 
   display: flex;
   width: 100vw;
-  height: 100vh;
-  /*align-items:  center;*/
+  height: 50vh;
   justify-content: center;
   margin: 0;
   background: #131313;
@@ -13,10 +12,12 @@
   font-family: 'Fira Mono', monospace;
   letter-spacing: -7px;
   padding-top: 15%;
+  overflow: hidden;
 }
 
 .content {
   animation: glitch 1s linear infinite;
+  overflow: hidden;
 }
 
 .text {
@@ -27,6 +28,7 @@
   position: absolute;
   top: 45%;
   right:33.5%;
+  overflow: hidden;
 }
 
 @keyframes glitch{
@@ -111,6 +113,7 @@
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  overflow: hidden;
 }
 
 
