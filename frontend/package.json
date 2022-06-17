@@ -1,6 +1,5 @@
 {
   "name": "frontend",
-  "homepage": "https://SheteSmit.github.io/Statify",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:5000",
@@ -11,7 +10,6 @@
     "axios": "^0.27.2",
     "bootstrap": "^5.1.3",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.4.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
@@ -21,8 +19,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
