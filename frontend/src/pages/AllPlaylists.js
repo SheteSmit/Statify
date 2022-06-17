@@ -36,7 +36,6 @@ export default function AllPlaylists() {
 
     return (
         <>
-        
         <div>
             {profileData && <div>
                 <h1 className={classes.head}>All Playlists: </h1>
