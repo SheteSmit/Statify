@@ -10,6 +10,10 @@ export default function PlaylistList(props) {
         items.push(<Playlist 
             title = {props.playLists.playlists[index]}
             image = {props.playLists.images[index]}
+            dance = {props.playLists.dance[index]}
+            energy = {props.playLists.energy[index]}
+            acoustic = {props.playLists.acoustic[index]}
+            valence = {props.playLists.valence[index]}
         />)
     }
 

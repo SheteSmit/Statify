@@ -13,14 +13,18 @@ export default function AllPlaylists() {
     
     axios({
     method: "GET",
-    url:"127.0.0.1:5000/redirect",
+    url:"/redirect",
     })
     .then((response) => {
     const res = response.data
     setProfileData(({
         playlists: res.playlists,
         avg_score: res.avg_score,
-        images: res.images}))
+        images: res.images,
+        dance: res.dance,
+        energy: res.energy,
+        acoustic: res.acoustic,
+        valence: res.valence}))
     }).catch((error) => {
     if (error.response) {
         console.log(error.response)
