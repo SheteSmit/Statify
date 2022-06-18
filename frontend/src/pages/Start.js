@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './Start.module.css'
-//import ParticleBackground from './ParticleBackground'
+import ParticleBackground from './ParticleBackground'
 
 export default function Start() {
     
@@ -10,8 +10,7 @@ export default function Start() {
 
     return (
     <>
-        
-        <a href='/temp'>YOYOYOYOYO</a>
+        <ParticleBackground />
         <body className={classes.body}>
             <div className={classes.content} title="Statify">
             Statify
