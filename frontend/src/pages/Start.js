@@ -2,6 +2,7 @@ import React from 'react'
 import classes from './Start.module.css'
 import ParticleBackground from './ParticleBackground'
 
+
 export default function Start() {
     
     const buttonHandler = () => {

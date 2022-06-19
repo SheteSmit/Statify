@@ -170,5 +170,5 @@ def create_spotify_oauth():
         client_secret=clientSecret,
         redirect_uri=url_for('redirectPage', _external=True),
         scope="user-library-read",
-        username="shetesmit"
+        username="mo.ikbal2003@gmail.com"
     )

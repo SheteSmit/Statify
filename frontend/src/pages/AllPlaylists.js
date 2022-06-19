@@ -40,18 +40,23 @@ export default function AllPlaylists() {
 
     return (
         <>
+        
         <div>
-            {profileData && <div>
+            {profileData && <><div>
                 <h1 className={classes.head}>All Playlists: </h1>
                 <PlaylistList playLists={profileData} />
                 <h2 className={classes.head2}>Average Score: </h2>
                     <h2 className={classes.head2}>{profileData.avg_score}</h2>
                 </div>
+                </>
             }
+            
         </div>
+        
         <button className={classes.button} onClick={buttonHandler}>
             Back
         </button>
+        
         </>
     );
 }
