@@ -53,8 +53,9 @@ def getTracks():
         print("user not logged in")
         return redirect("/")
 
-    
-    sp = spotipy.Spotify(auth=token_info['access_token'], requests_timeout=30, retries=10)
+    print('creating sp')
+    sp = spotipy.Spotify(auth=token_info['access_token'])
+    print('made sp')
 
     all_playLists = []
     iteration = 0
@@ -82,12 +83,15 @@ def getTracks():
     arr_valence = []
 
     while True:
+        print('trying to get data')
         items = sp.current_user_playlists(limit=50, offset=iteration * 50)['items']
+        print('got data')
 
         
         iteration += 1
 
         for idx, item in enumerate(items):
+            print('starting loop 1')
             playlist_count += 1
             id = item['id']
             name = item['name']
@@ -104,9 +108,11 @@ def getTracks():
             all_items = sp.playlist_tracks(id, limit=100, offset=iteration2 * 100)['items']
             
             iteration2 += 1
+            print('starting loop 2')
             for j in all_items:
                 if j is not None and j['track'] is not None and j['track']['popularity'] is not None and j['track']['id'] is not None:
                     features = sp.audio_features(j['track']['id'])[0]
+                    print('looked up features')
                     if features is not None:
                         if features['danceability'] is not None:
                             total_dance += features['danceability']
@@ -170,5 +176,5 @@ def create_spotify_oauth():
         client_secret=clientSecret,
         redirect_uri=url_for('redirectPage', _external=True),
         scope="user-library-read",
-        username="mo.ikbal2003@gmail.com"
+        username="shetesmit"
     )
