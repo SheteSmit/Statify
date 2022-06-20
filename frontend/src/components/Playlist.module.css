@@ -38,6 +38,13 @@
     background-color: #ffe2ed;
   }
 
+  :root {
+    --danceBox: 0;
+    --energyBox: 0;
+    --acousticBox: 0;
+    --valenceBox: 0;
+  }
+
   /* DANCE BOX */
 
   .box_dance
@@ -88,7 +95,7 @@
   }
   .box_dance .percent svg circle:nth-child(2)
   {
-    stroke-dashoffset:calc(440 - (440 * 67) / 100); /* Change the number here for perecent*/
+    stroke-dashoffset:calc(440 - (440 * var(--danceBox)) / 100); /* Change the number here for perecent*/
     stroke:#891fd6;
   }
   .box_dance .percent .num
@@ -169,7 +176,7 @@
   }
   .box_energy .percent svg circle:nth-child(2)
   {
-    stroke-dashoffset:calc(440 - (440 * 67) / 100); /* Change the number here for perecent*/
+    stroke-dashoffset:calc(440 - (440 * var(--energyBox)) / 100); /* Change the number here for perecent*/
     stroke:#b90e0e;
   }
   .box_energy .percent .num
@@ -250,7 +257,7 @@
   }
   .box_acoustic .percent svg circle:nth-child(2)
   {
-    stroke-dashoffset:calc(440 - (440 * 67) / 100); /* Change the number here for perecent*/
+    stroke-dashoffset:calc(440 - (440 * var(--acousticBox)) / 100); /* Change the number here for perecent*/
     stroke:#172bc4;
   }
   .box_acoustic .percent .num
@@ -331,7 +338,7 @@
   }
   .box_valence .percent svg circle:nth-child(2)
   {
-    stroke-dashoffset:calc(440 - (440 * 67) / 100); /* Change the number here for perecent*/
+    stroke-dashoffset:calc(440 - (440 * var(--valenceBox)) / 100); /* Change the number here for perecent*/
     stroke:#aaa20c;
   }
   .box_valence .percent .num

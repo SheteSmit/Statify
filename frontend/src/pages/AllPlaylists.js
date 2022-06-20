@@ -17,6 +17,7 @@ export default function AllPlaylists() {
     })
     .then((response) => {
     const res = response.data
+    console.log(res.data)
     setProfileData(({
         playlists: res.playlists,
         avg_score: res.avg_score,
@@ -45,7 +46,7 @@ export default function AllPlaylists() {
             {profileData && <><div>
                 <h1 className={classes.head}>All Playlists: </h1>
                 <PlaylistList playLists={profileData} />
-                <h2 className={classes.head2}>Average Score: </h2>
+                <h2 className={classes.head2}>Average Obscurity Score: </h2>
                     <h2 className={classes.head2}>{profileData.avg_score}</h2>
                 </div>
                 </>

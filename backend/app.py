@@ -5,8 +5,12 @@ import spotipy
 from flask import Flask, request, url_for, session, redirect
 from spotipy import SpotifyOAuth
 import time
+from werkzeug.serving import run_simple
+
 
 app = Flask(__name__)
+print("about to run")
+#run_simple("127.0.0.1", 5000, app, use_reloader=False)
 
 app.secret_key = ""
 app.config['SESSION_COOKIE_NAME'] = 'Smits Cookie'
@@ -54,9 +58,9 @@ def getTracks():
         return redirect("/")
 
     print('creating sp')
-    sp = spotipy.Spotify(auth=token_info['access_token'])
+    sp = spotipy.Spotify(auth=token_info['access_token'], requests_timeout=30, retries=10)
     print('made sp')
-
+    
     all_playLists = []
     iteration = 0
     counter = 0
@@ -112,7 +116,6 @@ def getTracks():
             for j in all_items:
                 if j is not None and j['track'] is not None and j['track']['popularity'] is not None and j['track']['id'] is not None:
                     features = sp.audio_features(j['track']['id'])[0]
-                    print('looked up features')
                     if features is not None:
                         if features['danceability'] is not None:
                             total_dance += features['danceability']
@@ -175,6 +178,5 @@ def create_spotify_oauth():
         client_id=clientId,
         client_secret=clientSecret,
         redirect_uri=url_for('redirectPage', _external=True),
-        scope="user-library-read",
-        username="shetesmit"
+        scope="user-library-read"
     )
