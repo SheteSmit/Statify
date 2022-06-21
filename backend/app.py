@@ -9,7 +9,7 @@ import time
 from werkzeug.serving import run_simple
 import requests
 
-#HELLO
+
 app = Flask(__name__)
 print("about to run")
 #run_simple("127.0.0.1", 5000, app, use_reloader=False)
