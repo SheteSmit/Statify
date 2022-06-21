@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from "axios";
 import PlaylistList from '../components/PlaylistList';
 import classes from './AllPlaylists.module.css'
@@ -12,28 +12,30 @@ export default function AllPlaylists() {
     const navigate = useNavigate();
     const [profileData, setProfileData] = useState(null)
     
-    axios({
-    method: "GET",
-    url:"/redirect",
-    })
-    .then((response) => {
-    const res = response.data
-    console.log(res.data)
-    setProfileData(({
-        playlists: res.playlists,
-        avg_score: res.avg_score,
-        images: res.images,
-        dance: res.dance,
-        energy: res.energy,
-        acoustic: res.acoustic,
-        valence: res.valence}))
-    }).catch((error) => {
-    if (error.response) {
-        console.log(error.response)
-        console.log(error.response.status)
-        console.log(error.response.headers)
-        }
-    })
+    useEffect(() => {
+        axios({
+        method: "GET",
+        url:"/redirect",
+        })
+        .then((response) => {
+        const res = response.data
+        console.log(res)
+        setProfileData(({
+            playlists: res.playlists,
+            avg_score: res.avg_score,
+            images: res.images,
+            dance: res.dance,
+            energy: res.energy,
+            acoustic: res.acoustic,
+            valence: res.valence}))
+        }).catch((error) => {
+        if (error.response) {
+            console.log(error.response)
+            console.log(error.response.status)
+            console.log(error.response.headers)
+            }
+        })
+    }, []);
         //end of new line 
 
     function buttonHandler() {

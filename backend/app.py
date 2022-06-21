@@ -1,3 +1,4 @@
+from crypt import methods
 from glob import glob
 import re
 from psutil import users
@@ -6,6 +7,7 @@ from flask import Flask, request, url_for, session, redirect
 from spotipy import SpotifyOAuth
 import time
 from werkzeug.serving import run_simple
+import requests
 
 
 app = Flask(__name__)
@@ -58,7 +60,7 @@ def getTracks():
         return redirect("/")
 
     print('creating sp')
-    sp = spotipy.Spotify(auth=token_info['access_token'], requests_timeout=30, retries=2)
+    sp = spotipy.Spotify(auth=token_info['access_token'], requests_timeout=30)
     print('made sp')
     
     all_playLists = []
@@ -159,6 +161,9 @@ def getTracks():
          "valence": res[6]
     }
     
+    send_url = 'https://statify-447ae-default-rtdb.firebaseio.com/playlists.json'
+    requests.post(send_url, json=response_body)
+
     return response_body
 
 def get_token():

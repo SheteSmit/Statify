@@ -52,7 +52,7 @@
 
   .box_dance
   {
-    background:rgb(199, 133, 225);
+    background:rgb(119, 218, 134);
     width:300px;
     height:300px;
     display:inline-block;
@@ -102,13 +102,12 @@
   .box_dance .percent svg circle:nth-child(1)
   {
     stroke-dashoffset:0;
-    stroke:#d0cdcd;
-    
+    stroke:#d0cdcd; 
   }
   .box_dance .percent svg circle:nth-child(2)
   {
     stroke-dashoffset:calc(440 - (440 * var(--danceBox)) / 100); /* Change the number here for perecent*/
-    stroke:#891fd6;
+    stroke:#0a9331;
     
   }
   .box_dance .percent .num
