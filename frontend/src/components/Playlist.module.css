@@ -368,3 +368,23 @@
     font-weight:700;
     letter-spacing:1px;
   }
+
+  .division {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  .left_half {
+    background-color:rgb(255, 255, 255);
+    flex: 1;
+    padding: 1rem;
+  }
+
+  .right_half {
+    background-color:navajowhite ;
+  }
