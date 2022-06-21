@@ -75,13 +75,16 @@
   {
     width:150px;
     height:150px;
-    position:relative;
+    position:absolute;
+    top: 20%;
+    right: 27%;
   }
   .box_dance .percent svg
   {
     width:150px;
     height:150px;
     position:relative;
+    
   }
   .box_dance .percent svg circle
   {
@@ -94,16 +97,19 @@
     stroke-dasharray:440;
     stroke-dashoffset:440;
     stroke-linecap:round;
+    
   }
   .box_dance .percent svg circle:nth-child(1)
   {
     stroke-dashoffset:0;
     stroke:#d0cdcd;
+    
   }
   .box_dance .percent svg circle:nth-child(2)
   {
     stroke-dashoffset:calc(440 - (440 * var(--danceBox)) / 100); /* Change the number here for perecent*/
     stroke:#891fd6;
+    
   }
   .box_dance .percent .num
   {
@@ -116,10 +122,14 @@
     align-items:center;
     position:absolute;
     color:#111;
+    
   }
   .box_dance .percent .num h2
   {
     font-size:48px;
+    position: absolute;
+    right: 22%;
+    top: .1px
   }
   .box_dance .percent .num h2 span
   {
@@ -131,6 +141,9 @@
     color:rgb(0, 0, 0);
     font-weight:700;
     letter-spacing:1px;
+    position: absolute;
+    right: 25.5%;
+    top: 65%
   }
 
   /* ENERGY BOX */
@@ -160,7 +173,9 @@
   {
     width:150px;
     height:150px;
-    position:relative;
+    position:absolute;
+    top: 20%;
+    right: 27%;
   }
   .box_energy .percent svg
   {
@@ -205,6 +220,9 @@
   .box_energy .percent .num h2
   {
     font-size:48px;
+    position: absolute;
+    right: 22%;
+    top: .1px
   }
   .box_energy .percent .num h2 span
   {
@@ -216,6 +234,9 @@
     color:rgb(0, 0, 0);
     font-weight:700;
     letter-spacing:1px;
+    position: absolute;
+    right: 36.5%;
+    top: 65%
   }
 
   /* ACOUSTIC BOX */
@@ -245,7 +266,9 @@
   {
     width:150px;
     height:150px;
-    position:relative;
+    position:absolute;
+    top: 20%;
+    right: 27%;
   }
   .box_acoustic .percent svg
   {
@@ -290,6 +313,9 @@
   .box_acoustic .percent .num h2
   {
     font-size:48px;
+    position: absolute;
+    right: 22%;
+    top: .1px
   }
   .box_acoustic .percent .num h2 span
   {
@@ -301,6 +327,9 @@
     color:rgb(0, 0, 0);
     font-weight:700;
     letter-spacing:1px;
+    position: absolute;
+    right: 25%;
+    top: 65%
   }
 
   /* VALENCE BOX */
@@ -330,7 +359,9 @@
   {
     width:150px;
     height:150px;
-    position:relative;
+    position:absolute;
+    top: 20%;
+    right: 27%;
   }
   .box_valence .percent svg
   {
@@ -375,6 +406,9 @@
   .box_valence .percent .num h2
   {
     font-size:48px;
+    position: absolute;
+    right: 22%;
+    top: .1px
   }
   .box_valence .percent .num h2 span
   {
@@ -386,6 +420,9 @@
     color:rgb(0, 0, 0);
     font-weight:700;
     letter-spacing:1px;
+    position: absolute;
+    right: 35%;
+    top: 65%
   }
 
   .division {

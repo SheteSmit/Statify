@@ -58,7 +58,7 @@ def getTracks():
         return redirect("/")
 
     print('creating sp')
-    sp = spotipy.Spotify(auth=token_info['access_token'], requests_timeout=30, retries=10)
+    sp = spotipy.Spotify(auth=token_info['access_token'], requests_timeout=30, retries=2)
     print('made sp')
     
     all_playLists = []
