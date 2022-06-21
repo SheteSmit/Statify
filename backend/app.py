@@ -161,8 +161,8 @@ def getTracks():
          "valence": res[6]
     }
     
-    send_url = 'https://statify-447ae-default-rtdb.firebaseio.com/playlists.json'
-    requests.post(send_url, json=response_body)
+    """ send_url = 'https://statify-447ae-default-rtdb.firebaseio.com/playlists.json'
+    requests.post(send_url, json=response_body) """
 
     return response_body
 

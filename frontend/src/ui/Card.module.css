@@ -6,7 +6,7 @@
     margin: 0 auto;
     border-color:rgb(0, 0, 0);
     border-width: 10px;
-    
+    z-index: 100;
   }
 
 

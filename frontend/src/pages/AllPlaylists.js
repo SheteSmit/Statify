@@ -5,8 +5,6 @@ import PlaylistList from '../components/PlaylistList';
 import classes from './AllPlaylists.module.css'
 import { useNavigate } from 'react-router-dom';
 
-
-
 export default function AllPlaylists() {
     
     const [isLoading, setIsLoading] = useState(true);
@@ -68,7 +66,6 @@ export default function AllPlaylists() {
 
     return (
         <>
-
         <div>
             {profileData && <><div>
                 <h1 className={classes.head}>All Playlists: </h1>
