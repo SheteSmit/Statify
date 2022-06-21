@@ -1,5 +1,11 @@
 # Spotify Playlist Moods (IN-PROGRESS):
-A program that assesses the mood of each one of your Spotify playlists and gives an obscurity score. Utilizes the spotipy api to pull user information from their profile.
+Statify uses the spotipy api to pull infomation about your personal spotify playlists.
+These details include:
+  - The Obscurity Score: From 0-100 how popular the songs on your playlist are, 0 is least popular, 100 is most popular
+  - Danceability %: How suited the playlist is for dancing
+  - Energy %: How energetic the playlist is
+  - Acousticness %: How acoustic the playlist is
+  - Happiness (Valence) %: A measure of how postive the playlist is
 
 # Languages/Framworks Used:
 - Python
@@ -7,3 +13,7 @@ A program that assesses the mood of each one of your Spotify playlists and gives
 - React JS
 - HTML
 - CSS
+
+# URL (IN-PROGRESS):
+https://statify-447ae.firebaseapp.com/
+
