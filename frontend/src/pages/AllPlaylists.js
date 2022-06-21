@@ -9,10 +9,12 @@ import { useNavigate } from 'react-router-dom';
 
 export default function AllPlaylists() {
     
+    const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
     const [profileData, setProfileData] = useState(null)
     
     useEffect(() => {
+        setIsLoading(true)
         axios({
         method: "GET",
         url:"/redirect",
@@ -28,6 +30,7 @@ export default function AllPlaylists() {
             energy: res.energy,
             acoustic: res.acoustic,
             valence: res.valence}))
+        setIsLoading(false)
         }).catch((error) => {
         if (error.response) {
             console.log(error.response)
@@ -40,6 +43,15 @@ export default function AllPlaylists() {
 
     function buttonHandler() {
         navigate('/')
+    }
+
+    if (isLoading) {
+        return (
+            <section>
+                <h1 className={classes.head}>Loading...</h1>
+                <h2 className={classes.head2}>Depending on the size/number of your playlists this process may take a few minutes</h2>
+            </section>
+        )
     }
 
     return (
