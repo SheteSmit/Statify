@@ -37,7 +37,7 @@ export default function AllPlaylists() {
             }
         })
     }, []);
-        //end of new line 
+        
 
     function buttonHandler() {
         navigate('/')
