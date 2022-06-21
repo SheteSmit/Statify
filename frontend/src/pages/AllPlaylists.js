@@ -48,8 +48,20 @@ export default function AllPlaylists() {
     if (isLoading) {
         return (
             <section>
-                <h1 className={classes.head}>Loading...</h1>
+                <h1 className={classes["head"]}>Loading...</h1>
                 <h2 className={classes.head2}>Depending on the size/number of your playlists this process may take a few minutes</h2>
+                <div className={classes.center}>
+                    <div className={classes["wave"]}></div>
+                    <div className={classes["wave"]}></div>
+                    <div className={classes["wave"]}></div>
+                    <div className={classes["wave"]}></div>
+                    <div className={classes["wave"]}></div>
+                    <div className={classes["wave"]}></div>
+                    <div className={classes["wave"]}></div>
+                    <div className={classes["wave"]}></div>
+                    <div className={classes["wave"]}></div>
+                    <div className={classes["wave"]}></div>
+                </div>
             </section>
         )
     }
