@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2%;
+    resize: both;
   }
   
   .square {
@@ -11,6 +12,7 @@
     padding: 5%;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
+    border-radius: 30px;
   }
   
   .square img {
@@ -18,16 +20,21 @@
     height: 100%;
     object-fit: contain;
     object-position: center;
+    border-radius: 30px;
   }
   
   .square.fullImg {
     padding: 0;
+    border-radius: 30px;
   }
   
   .square.fullImg img {
     object-fit: cover;
+    border-radius: 30px;
   }
 
   .square.items {
     flex-direction: row;
+    padding-bottom: 5%;
+    border-radius: 30px;
   }

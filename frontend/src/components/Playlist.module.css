@@ -5,8 +5,11 @@
   .image {
     padding-top: 50px;
     text-align: center;
+    
   }
-  
+  img {
+    border-radius: 30px;
+  }
   .content {
     text-align: center;
     padding: 1rem;
@@ -57,8 +60,12 @@
     align-items:center;
     position:relative;
     flex-direction:row;
-    box-shadow:0 30px 60px rgba(0,0,0,.4);
+    box-shadow:0 20px 30px rgba(0,0,0,.4);
     transition: transform .2s;
+    border-radius: 30px;
+    padding: 2%;
+    margin-bottom: 8%;
+    margin-right: 4%;
   }
   .box_dance:hover
   {
@@ -138,8 +145,12 @@
     align-items:center;
     position:relative;
     flex-direction:row;
-    box-shadow:0 30px 60px rgba(0,0,0,.4);
+    box-shadow:0 20px 30px rgba(0,0,0,.4);
     transition: transform .2s;
+    border-radius: 30px;
+    padding: 2%;
+    margin-bottom: 8%;
+    margin-right: 4%;
   }
   .box_energy:hover
   {
@@ -219,8 +230,12 @@
     align-items:center;
     position:relative;
     flex-direction:row;
-    box-shadow:0 30px 60px rgba(0,0,0,.4);
+    box-shadow:0 20px 30px rgba(0,0,0,.4);
     transition: transform .2s;
+    border-radius: 30px;
+    padding: 2%;
+    margin-bottom: 8%;
+    margin-left: 4%;
   }
   .box_acoustic:hover
   {
@@ -300,8 +315,12 @@
     align-items:center;
     position:relative;
     flex-direction:row;
-    box-shadow:0 30px 60px rgba(0,0,0,.4);
+    box-shadow:0 20px 30px rgba(0,0,0,.4);
     transition: transform .2s;
+    border-radius: 30px;
+    padding: 2%;
+    margin-bottom: 8%;
+    margin-left: 4%;
   }
   .box_valence:hover
   {
