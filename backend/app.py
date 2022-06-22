@@ -40,7 +40,7 @@ def login():
     return (redirect(auth_url))
 
 @app.route('/redirect')
-def redirectPage():
+def redirectPage(): 
     
     sp_oauth = create_spotify_oauth()
     session.clear()

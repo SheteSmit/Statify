@@ -4,6 +4,7 @@ import axios from "axios";
 import PlaylistList from '../components/PlaylistList';
 import classes from './AllPlaylists.module.css'
 import { useNavigate } from 'react-router-dom';
+import Card from '../ui/Card.js'
 
 export default function AllPlaylists() {
     
@@ -47,7 +48,7 @@ export default function AllPlaylists() {
         return (
             <section>
                 <h1 className={classes["head"]}>Loading...</h1>
-                <h2 className={classes.head2}>Depending on the size/number of your playlists this process may take a few minutes</h2>
+                <h2 className={classes.head3}>Depending on the size/number of your playlists this process may take a few minutes</h2>
                 <div className={classes.center}>
                     <div className={classes["wave"]}></div>
                     <div className={classes["wave"]}></div>
@@ -70,8 +71,16 @@ export default function AllPlaylists() {
             {profileData && <><div>
                 <h1 className={classes.head}>All Playlists: </h1>
                 <PlaylistList playLists={profileData} />
-                <h2 className={classes.head2}>Average Obscurity Score: </h2>
-                    <h2 className={classes.head2}>{profileData.avg_score}</h2>
+                <Card>
+                    <div className={classes.head2}>
+                        <h2 >Your Average Stats: </h2>
+                        <h2 >{profileData.avg_score}</h2>
+                        {/* STUFF TO ADD:
+                            - Average stats for all playlists
+                            - Make the last card better with a diff font or sum else ig
+                        */}
+                    </div>
+                </Card>
                 </div>
                 </>
             }

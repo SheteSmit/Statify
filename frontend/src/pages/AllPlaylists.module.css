@@ -11,9 +11,13 @@ html {background-color: #131313}
 } 
 
 .head2 {
-    color: whitesmoke;
+    color: rgb(0, 0, 0);
     text-align: center;
-    background-color: #131313;
+}
+
+.head3 {
+  color: rgb(255, 255, 255);
+  text-align: center;
 }
 
 .button {
