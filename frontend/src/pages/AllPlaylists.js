@@ -5,40 +5,87 @@ import PlaylistList from '../components/PlaylistList';
 import classes from './AllPlaylists.module.css'
 import { useNavigate } from 'react-router-dom';
 import Card from '../ui/Card.js'
+import useAuth from './UseAuth';
+import SpotifyWebApi from 'spotify-web-api-node'
 
 export default function AllPlaylists() {
     
     const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
     const [profileData, setProfileData] = useState(null)
+
+    const spotifyApi = new SpotifyWebApi({
+        clientId: "8d8af266e27f4ca4b997bf3b1d9def67"
+    })
+
+    console.log("running this")
+    const code = new URLSearchParams(window.location.search).get('code')
+    console.log("code: " + code)
+    const accessToken = useAuth(code)
     
-    useEffect(() => {
-        setIsLoading(true)
-        axios({
-        method: "GET",
-        url:"/redirect",
-        })
-        .then((response) => {
-        const res = response.data
-        console.log(res)
-        setProfileData(({
-            playlists: res.playlists,
-            avg_score: res.avg_score,
-            images: res.images,
-            dance: res.dance,
-            energy: res.energy,
-            acoustic: res.acoustic,
-            valence: res.valence}))
-        setIsLoading(false)
-        }).catch((error) => {
-        if (error.response) {
-            console.log(error.response)
-            console.log(error.response.status)
-            console.log(error.response.headers)
-            }
-        })
-    }, []);
-        
+    if (accessToken == null) {
+        console.log("leaving")
+        return
+    } else {
+        spotifyApi.setAccessToken(accessToken);
+    }
+
+    console.log(accessToken)
+    console.log(spotifyApi.getAccessToken())
+
+    
+
+    axios.get('https://api.spotify.com/v1/me/playlists', {
+        headers: {
+            Authorization: "Bearer " + accessToken,
+        },
+    })
+    .then((response) => {
+        setProfileData(response.data)
+    }).catch((error) => {
+        console.log(error);
+    })
+
+    
+    return (
+        <>
+            {profileData?.items ? profileData.items.map((item) => <p>{item.name}</p>) : null}
+        </>
+    )
+    
+    
+    /* 
+
+
+        useEffect(() => {
+            
+            setIsLoading(true)
+            
+            axios({
+            method: "GET",
+            url:"/redirect",
+            })
+            .then((response) => {
+            const res = response.data
+            console.log(res)
+            setProfileData(({
+                playlists: res.playlists,
+                avg_score: res.avg_score,
+                images: res.images,
+                dance: res.dance,
+                energy: res.energy,
+                acoustic: res.acoustic,
+                valence: res.valence}))
+            setIsLoading(false)
+            }).catch((error) => {
+            if (error.response) {
+                console.log(error.response)
+                console.log(error.response.status)
+                console.log(error.response.headers)
+                }
+            })
+        }, []);
+    
 
     function buttonHandler() {
         navigate('/')
@@ -75,10 +122,6 @@ export default function AllPlaylists() {
                     <div className={classes.head2}>
                         <h2 >Your Average Stats: </h2>
                         <h2 >{profileData.avg_score}</h2>
-                        {/* STUFF TO ADD:
-                            - Average stats for all playlists
-                            - Make the last card better with a diff font or sum else ig
-                        */}
                     </div>
                 </Card>
                 </div>
@@ -92,5 +135,5 @@ export default function AllPlaylists() {
         </button>
         
         </>
-    );
+    )  */
 }
