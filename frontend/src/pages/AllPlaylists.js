@@ -10,10 +10,10 @@ import SpotifyWebApi from 'spotify-web-api-node'
 
 export default function AllPlaylists() {
     
-    const [isLoading, setIsLoading] = useState(true);
+     const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
     const [profileData, setProfileData] = useState(null)
-
+    /*
     const spotifyApi = new SpotifyWebApi({
         clientId: "8d8af266e27f4ca4b997bf3b1d9def67"
     })
@@ -35,28 +35,14 @@ export default function AllPlaylists() {
 
     
 
-    axios.get('https://api.spotify.com/v1/me/playlists', {
-        headers: {
-            Authorization: "Bearer " + accessToken,
-        },
-    })
-    .then((response) => {
-        setProfileData(response.data)
-    }).catch((error) => {
-        console.log(error);
-    })
-
     
     return (
         <>
-            {profileData?.items ? profileData.items.map((item) => <p>{item.name}</p>) : null}
         </>
-    )
+    ) */
     
     
-    /* 
-
-
+    
         useEffect(() => {
             
             setIsLoading(true)
@@ -86,11 +72,9 @@ export default function AllPlaylists() {
             })
         }, []);
     
-
     function buttonHandler() {
         navigate('/')
     }
-
     if (isLoading) {
         return (
             <section>
@@ -111,7 +95,6 @@ export default function AllPlaylists() {
             </section>
         )
     }
-
     return (
         <>
         <div>
@@ -135,5 +118,5 @@ export default function AllPlaylists() {
         </button>
         
         </>
-    )  */
+    )  
 }
