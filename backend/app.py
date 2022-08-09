@@ -1,13 +1,7 @@
-from crypt import methods
-from glob import glob
-import re
-from psutil import users
 import spotipy
 from flask import Flask, request, url_for, session, redirect
 from spotipy import SpotifyOAuth
 import time
-from werkzeug.serving import run_simple
-import requests
 
 
 app = Flask(__name__)
@@ -28,7 +22,8 @@ with open('client_secret.txt') as f:
     clientSecret = f.read()
 
 with open('client_id.txt') as f:
-    clientId = f.read()
+    clientId = f.read() 
+
 
 @app.route('/')
 def login():
