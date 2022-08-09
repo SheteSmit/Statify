@@ -165,7 +165,7 @@ def getTracks():
     send_url = 'https://statify-447ae-default-rtdb.firebaseio.com/playlists.json'
     requests.post(send_url, json=response_body)
 
-    return redirect("https://statify-447ae.firebaseapp.com/scores", code=302)
+    return redirect("http://127.0.0.1:3000/scores", code=302)
 
 def get_token():
     global token_info
