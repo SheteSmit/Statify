@@ -8,69 +8,45 @@ import Card from '../ui/Card.js'
 import useAuth from './UseAuth';
 import SpotifyWebApi from 'spotify-web-api-node'
 
+
 export default function AllPlaylists() {
     
-     const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
     const [profileData, setProfileData] = useState(null)
-    /*
-    const spotifyApi = new SpotifyWebApi({
-        clientId: "8d8af266e27f4ca4b997bf3b1d9def67"
-    })
 
-    console.log("running this")
-    const code = new URLSearchParams(window.location.search).get('code')
-    console.log("code: " + code)
-    const accessToken = useAuth(code)
-    
-    if (accessToken == null) {
-        console.log("leaving")
-        return
-    } else {
-        spotifyApi.setAccessToken(accessToken);
-    }
-
-    console.log(accessToken)
-    console.log(spotifyApi.getAccessToken())
-
-    
-
-    
-    return (
-        <>
-        </>
-    ) */
-    
-    
-    
-        useEffect(() => {
-            
-            setIsLoading(true)
-            
-            axios({
-            method: "GET",
-            url:"/redirect",
-            })
-            .then((response) => {
-            const res = response.data
-            console.log(res)
-            setProfileData(({
-                playlists: res.playlists,
-                avg_score: res.avg_score,
-                images: res.images,
-                dance: res.dance,
-                energy: res.energy,
-                acoustic: res.acoustic,
-                valence: res.valence}))
+    useEffect(() => {
+        
+        setIsLoading(true)
+        
+        axios({
+        method: "GET",
+        url:"https://statify-447ae-default-rtdb.firebaseio.com/playlists.json",
+        })
+        .then((response) => {
+        const json = response.data
+        const key = Object.keys(json)[0]
+        console.log(key)
+        const res = json[key]
+        console.log(res)
+        setProfileData(({
+            playlists: res.playlists,
+            avg_score: res.avg_score,
+            images: res.images,
+            dance: res.dance,
+            energy: res.energy,
+            acoustic: res.acoustic,
+            valence: res.valence}))
+        setIsLoading(false)
+        }).catch((error) => {
+        if (error.response) {
             setIsLoading(false)
-            }).catch((error) => {
-            if (error.response) {
-                console.log(error.response)
-                console.log(error.response.status)
-                console.log(error.response.headers)
-                }
-            })
-        }, []);
+            console.log(error.response)
+            console.log(error.response.status)
+            console.log(error.response.headers)
+            }
+        })
+    }, []);
     
     function buttonHandler() {
         navigate('/')
