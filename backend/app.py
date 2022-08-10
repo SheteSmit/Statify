@@ -24,7 +24,8 @@ with open('client_secret.txt') as f:
     clientSecret = f.read()
 
 with open('client_id.txt') as f:
-    clientId = f.read()  
+    clientId = f.read() 
+
 
 @app.route('/')
 def login():
@@ -56,7 +57,7 @@ def getTracks():
         return redirect("/")
 
     print('creating sp')
-    sp = spotipy.Spotify(auth=token_info['access_token'], requests_timeout=30)
+    sp = spotipy.Spotify(auth=token_info['access_token'], requests_timeout=100, retries=10)
     print('made sp')
     
     all_playLists = []
