@@ -13,6 +13,8 @@ These details include:
 - React JS
 - HTML
 - CSS
+- Firebase
+- Heroku
 
 # URL (IN-PROGRESS):
 https://statify-447ae.firebaseapp.com/
