@@ -9,7 +9,6 @@ import requests
 app = Flask(__name__)
 CORS(app)
 print("about to run")
-#run_simple("127.0.0.1", 5000, app, use_reloader=False)
 
 app.secret_key = ""
 app.config['SESSION_COOKIE_NAME'] = 'Smits Cookie'
@@ -18,18 +17,14 @@ clientId = ""
 clientSecret = ""
 nameUser = ""
 
-""" with open('app_secret.txt') as f:
+with open('app_secret.txt') as f:
     app.secret_key = f.read()
 
 with open('client_secret.txt') as f:
     clientSecret = f.read()
 
 with open('client_id.txt') as f:
-    clientId = f.read()  """
-
-app.secret_key = "08adcef78"
-clientId = "8d8af266e27f4ca4b997bf3b1d9def67"
-clientSecret = "5566fd18a0864a9b84ae3ca483a4db43"
+    clientId = f.read()  
 
 @app.route('/')
 def login():
@@ -165,7 +160,7 @@ def getTracks():
     send_url = 'https://statify-447ae-default-rtdb.firebaseio.com/playlists.json'
     requests.post(send_url, json=response_body)
 
-    return redirect("http://127.0.0.1:3000/scores", code=302)
+    return redirect("https://statify-447ae.web.app/scores", code=302)
 
 def get_token():
     global token_info
