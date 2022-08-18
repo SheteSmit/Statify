@@ -1,4 +1,4 @@
-# Spotify Playlist Moods (IN-PROGRESS):
+# Statify (IN-PROGRESS):
 Statify uses the spotipy api to pull infomation about your personal spotify playlists.
 These details include:
   - The Obscurity Score: From 0-100 how popular the songs on your playlist are, 0 is least popular, 100 is most popular
@@ -19,3 +19,5 @@ These details include:
 # URL (IN-PROGRESS):
 https://statify-447ae.firebaseapp.com/
 
+*** DISCLAIMER ***
+Currently working on receiving a quota extension from spotify so the app is availble for public use.
