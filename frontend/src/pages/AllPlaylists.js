@@ -5,8 +5,7 @@ import PlaylistList from '../components/PlaylistList';
 import classes from './AllPlaylists.module.css'
 import { useNavigate } from 'react-router-dom';
 import Card from '../ui/Card.js'
-import useAuth from './UseAuth';
-import SpotifyWebApi from 'spotify-web-api-node'
+import {Container, Center} from '@mantine/core'
 
 
 export default function AllPlaylists() {
@@ -77,12 +76,20 @@ export default function AllPlaylists() {
             {profileData && <><div>
                 <h1 className={classes.head}>All Playlists: </h1>
                 <PlaylistList playLists={profileData} />
-                <Card>
-                    <div className={classes.head2}>
-                        <h2 >Your Average Stats: </h2>
-                        <h2 >{profileData.avg_score}</h2>
-                    </div>
-                </Card>
+                <Container>
+                <Center>
+                    <Card>
+                        <Container>
+                            <Center>
+                                <div className={classes.head2}>
+                                    <h2 >Your Average Stats: </h2>
+                                    <h2 >{profileData.avg_score}</h2>
+                                </div>
+                            </Center>
+                        </Container>
+                    </Card>
+                </Center>
+                </Container>
                 </div>
                 </>
             }

@@ -21,13 +21,11 @@
 }
 
 .text {
-  text-align: center;
-  font-family: 'source code pro', monospace;
+  font-family: 'Roboto Mono', monospace;
   font-size: 28px;
   color: white;
   position: absolute;
-  top: 45%;
-  right:33.5%;
+  top: 40%;
   overflow: hidden;
 }
 
@@ -94,7 +92,7 @@
   color: #000000;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 16px;
   font-weight: 500;
   line-height: 2.5;
